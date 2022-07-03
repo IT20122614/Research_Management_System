@@ -1,0 +1,36 @@
+// Display all users
+router.get("/usersGet", async (req, res) => {
+  const users = await User.find();
+
+  res.send(users);
+});
+//display all groups
+router.get("/groupget", async (req, res) => {
+  const users = await Group.find();
+
+  res.send(users);
+});
+//display all group members
+router.get("/groupmembersget", async (req, res) => {
+  const users = await GroupMembers.find();
+
+  res.send(users);
+});
+//display all supervisors
+router.get("/supervisorsget", async (req, res) => {
+  const users = await User.find({userRole: "Supervisor"});
+
+  res.send(users);
+});
+//display all co-supervisors
+router.get("/cosupervisorsget", async (req, res) => {
+  const users = await User.find({userRole: "Co-Supervisor"});
+
+  res.send(users);
+});
+//display all co-supervisors
+router.get("/getAllTopics", async (req, res) => {
+  const users = await Topic.find();
+
+  res.send(users);
+});
